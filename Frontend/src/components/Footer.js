@@ -1,71 +1,24 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import {
-  AiFillGithub,
-  AiOutlineTwitter,
-  AiFillInstagram,
-} from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
+import "../styles/Footer.css";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+const Footer = () => {
   return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Harsh Borude</h3>
-        </Col>
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © 2025 </h3>
-        </Col>
-        <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/harshborude"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="tw"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiOutlineTwitter />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/harshborude"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.instagram.com/harsh.borude"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
+    <footer className="footer">
+      <div className="footer-icons">
+        <a href="https://github.com/" target="_blank" rel="noreferrer">
+          <FaGithub />
+        </a>
+        <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
+          <FaLinkedin />
+        </a>
+        <a href="mailto:youremail@example.com">
+          <FaEnvelope />
+        </a>
+      </div>
+      <p className="footer-text">© {new Date().getFullYear()} Harsh. All rights reserved.</p>
+    </footer>
   );
-}
+};
 
 export default Footer;

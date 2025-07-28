@@ -1,0 +1,119 @@
+.about-container {
+  background-color: #0d1117;
+  color: #e6edf3;
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.intro-section, .hobbies-section, .skills-section,
+.tools-section, .calendar-section, .leetcode-section {
+  margin-bottom: 2.5rem;
+}
+
+h1, h2 {
+  color: #58a6ff;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
+}
+
+.skills-grid, .tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.skill-badge, .tool-badge {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  color: #e6edf3;
+  transition: 0.2s ease;
+}
+
+.skill-badge:hover, .tool-badge:hover {
+  background-color: #1f6feb;
+  color: #fff;
+}
+
+.calendar-placeholder {
+  font-size: 1.1rem;
+  color: #c9d1d9;
+  margin: 0.5rem 0;
+}
+
+.calendar-footer {
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin-top: 0.2rem;
+}
+
+.calendar-scale {
+  color: #58a6ff;
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+
+.about-footer {
+  text-align: center;
+  border-top: 1px solid #30363d;
+  padding-top: 1rem;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #8b949e;
+}
+
+.about-github {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.github-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.github-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.github-info h3 {
+  margin: 0 0 0.5rem;
+}
+
+.github-info a {
+  color: #4ea1ff;
+  text-decoration: underline;
+}
+
+.leetcode-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #fff;
+  max-width: 400px;
+  margin-top: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.leetcode-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.leetcode-card p {
+  margin: 0.25rem 0;
+}
