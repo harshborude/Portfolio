@@ -44,6 +44,11 @@ const Contact = () => {
     }
   };
 
+  console.log("SERVICE:", import.meta.env.VITE_APP_EMAILJS_SERVICE_ID);
+console.log("TEMPLATE:", import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID);
+console.log("PUBLIC:", import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
+
+
   return (
     <section id="contact" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
