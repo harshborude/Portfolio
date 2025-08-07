@@ -51,51 +51,53 @@ const ShowcaseSection = () => {
     <section id="work" ref={sectionRef} className="app-showcase">
       <div className="w-full">
         <div className="showcaselayout">
-          {/* Left */}
-          <div className="first-project-wrapper" ref={project1Ref}>
-            <div className="image-wrapper">
-              <img src="/images/project1.png" alt="SearchEngine" />
-            </div>
-            <div className="text-content">
-              <h2>
-                WhiteBoard App
-              </h2>
-              <p className="text-white-50 md:text-xl">
-                Engineered a Whiteboard app that can processes over <strong>20,000+</strong> documents, delivering <strong>sub-100ms</strong> search responses through intelligent caching and async processing.
-              </p>
-            </div>
-          </div>
+         {/* Left */}
+<a href="https://your-link-to-whiteboard-app.com" target="_blank" rel="noopener noreferrer">
+  <div className="first-project-wrapper" ref={project1Ref}>
+    <div className="image-wrapper">
+      <img src="/images/project1.png" alt="SearchEngine" />
+    </div>
+    <div className="text-content">
+      <h2>WhiteBoard App</h2>
+      <p className="text-white-50 md:text-xl">
+        Engineered a Whiteboard app that can process over <strong>20,000+</strong> documents,
+        delivering <strong>sub-100ms</strong> search responses through intelligent caching and async processing.
+      </p>
+    </div>
+  </div>
+</a>
 
-          {/* Right */}
-          <div className="project-list-wrapper overflow-hidden">
-            <div className="project" ref={project2Ref}>
-              <div className="image-wrapper bg-[#027ecd]/70">
-                <img src="/images/project2.png" alt="GoChat" />
-              </div>
-              <div className="text-content">
-                <h2>
-                 Rubik's Cube solver 
-                </h2>
-                <p className="text-white-50 md:text-xl">
-                  Real time group chat application built in GoLang and React, allowing multiple users to communicate
-                </p>
-              </div>
-            </div>
+{/* Right */}
+<div className="project-list-wrapper overflow-hidden">
+  <a href="https://your-link-to-cube-solver.com" target="_blank" rel="noopener noreferrer">
+    <div className="project" ref={project2Ref}>
+      <div className="image-wrapper bg-[#027ecd]/70">
+        <img src="/images/project2.png" alt="GoChat" />
+      </div>
+      <div className="text-content">
+        <h2>Rubik's Cube solver</h2>
+        <p className="text-white-50 md:text-xl">
+          Real time group chat application built in GoLang and React, allowing multiple users to communicate
+        </p>
+      </div>
+    </div>
+  </a>
 
-            <div className="project" ref={project3Ref}>
-              <div className="image-wrapper bg-[#ffe7eb]">
-                <img src="/images/project3.png" alt="GoChat" />
-              </div>
-              <div className="text-content">
-                <h2>
-                  GlyphGrab (Emoji Picker)
-                </h2>
-                <p className="text-white-50 md:text-xl">
-                  Lightweight, cross-platform emoji picker designed for quick access to emojis via keyboard
-                </p>
-              </div>
-            </div>
-          </div>
+  <a href="https://your-link-to-dsa-search.com" target="_blank" rel="noopener noreferrer">
+    <div className="project" ref={project3Ref}>
+      <div className="image-wrapper bg-[#ffe7eb]">
+        <img src="/images/project3.png" alt="GoChat" />
+      </div>
+      <div className="text-content">
+        <h2>DSA based Search-Engine</h2>
+        <p className="text-white-50 md:text-xl">
+          Lightweight, cross-platform emoji picker designed for quick access to emojis via keyboard
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+
         </div>
       </div>
     </section>
