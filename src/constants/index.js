@@ -1,41 +1,16 @@
-import { FaFacebook, FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
-
 const navLinks = [
   {
     name: "Work",
     link: "#work",
   },
-  {
-    name: "Journey",
-    link: "#experience",
-  },
+  // {
+  //   name: "Journey",
+  //   link: "#experience",
+  // },
   {
     name: "Skills",
     link: "#skills",
   },
-];
-
- const footerLinks = [
-  {
-    name: "facebook",
-    link: "https://www.facebook.com/harsh.borude",
-    icon: FaFacebook 
-  },
-  {
-    name: "instagram",
-    link: "https://www.instagram.com/harsh.borude",
-    icon: FaInstagram
-  },
-  {
-    name: "linkedin",
-    link: "https://www.linkedin.com/in/harshborude/",
-    icon: FaLinkedin
-  },
-  {
-    name: "github",
-    link: "https://github.com/harshborude",
-    icon: FaGithub
-  }
 ];
 
 const words = [
@@ -50,25 +25,25 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 1, suffix: "", label: "Years of Experience" },
-  { value: 5, suffix: "+", label: "Completed Projects" },
+  { value: 1, suffix: "+", label: "Years of Experience" },
+  { value: 10, suffix: "+", label: "Completed Projects" },
 ];
 
 const abilities = [
   {
-    imgPath: "/images/build.png",
+    // imgPath: "/images/build.png",
     title: "Engineering Instinct",
-    desc: "I build systems that aren’t just functional—they’re thoughtfully designed with modularity and scalability in mind.",
+  desc: "I build systems that are not only functional but thoughtfully designed with modularity and scalability at their core.",
   },
   {
-    imgPath: "/images/problem.png",
+    // imgPath: "/images/problem.png",
     title: "End-to-End Problem Solving",
-    desc: "From infrastructure to APIs, I enjoy taking full ownership of my projects and making sure every part fits cleanly.",
+    desc: "From infrastructure to APIs, I take full ownership of my projects and ensure each component integrates cleanly and efficiently.",
   },
   {
-    imgPath: "/images/curiosity.png",
+    // imgPath: "/images/curiosity.png",
     title: "Projects with a Purpose",
-    desc: "Whether it's an emoji picker for quick texting or a script to clean my Downloads folder, I love turning everyday friction into useful tools, picking up new skills and experience.",
+  desc: "Whether it is a small utility or a full-featured application, I focus on solving real problems and turning everyday friction into practical, well-built tools while continuously expanding my skill set.",
   },
   // {
   //   imgPath: "/images/arch.png",
@@ -89,24 +64,10 @@ const techStackImgs = [
       // "/images/logos/figma.png"
     ]
   },
-  // {
-  //   name: "Python Developer",
-  //   technologies: [
-  //     "/images/logos/python.png",
-  //     "/images/logos/redis.png",
-  //     "/images/logos/qt.png",
-  //     "/images/logos/selenium.png",
-  //     "/images/logos/pandas.png",
-  //     "/images/logos/numpy.png"
-  //   ]
-  // },
+  
   {
-    name: " Backend Developer",
+    name: "Backend Developer",
     technologies: [
-      //  "/images/logos/react.png",
-      //   "/images/logos/tailwind.png",
-      // "/images/logos/javascript.png",
-      // "/images/logos/vite.png",
       "/images/logos/node.png",
       "/images/logos/npm.png",
       "/images/logos/express.png",
@@ -131,10 +92,12 @@ const techStackImgs = [
     technologies: [
       "/images/logos/git.png",
       "/images/logos/github.png",
-      // "/images/logos/go.png",
+      "/images/logos/go.png",
       // "/images/logos/bash.png",
       // "/images/logos/arch.png",
       "/images/logos/postman.png",
+      "/images/logos/c++.webp",
+      
     ]
   },
 ];
@@ -157,36 +120,24 @@ const journeyCards = [
     logoPath: "/images/logos/IITKGP.png",
     title: "JEE Aspirant",
     date: "January 2021 - August 2022",
-    story: "I focused fully on cracking JEE, and it taught me discipline, consistency, and pressure management. I made it to IIT Kharagpur on my second attempt.",
+    story: "It taught me discipline, consistency, and pressure management — and I made it to IIT Kharagpur on my second attempt.",
     journey: [
       "Learned discipline, focus, and how to push through mental fatigue.",
-      "Faced the common challenge of sacrificing passion to chase a bigger goal.",
-      "Secured admission into IIT KGP (Mining) in my second attempt securing 99.1%ile in JEE Mains",
-    ],
-  },
-   {
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logos/IITKGP.png",
-    title: "Technology Secretary, Rajendra Prasad Hall of Residence",
-    date: "Aug 2023 - Mar 2024",
-    story: "As Technology Secretary, I organized events such as OpenSoft (a software competition among 23 halls) and Hardware Modelling, while managing over 20 captains across all competitions. I also served as Vice Captain for Illumination, an inter-hall competition, and was honored with the Best Fresher award for my contributions.",
-    journey: [
-      "Conducted and managed teams for 10 events in the General Championship Technology",
-      "Vice-captain of Illumination",
-      "Awarded Best Fresher for my contibutions",
+      "Faced the common challenge of chasing a big goal.",
+      "Secured admission into IIT KGP in my second attempt.",
     ],
   },
   {
     imgPath: "/images/exp4.png",
-    logoPath: "/images/logos/SAC.svg",
-    title: "Student Member, Students' Alumni Cell",
-    date: "Nov 2023 - May 2024",
-    story: "i joined SAC in November 2023, where I contributed to networking, sponsorship, and event management, gaining valuable experience in teamwork and time management. Leading a team of 23 associate members, I successfully coordinated various initiatives and, along with three teammates, managed corporate and media relations for the Annual Alumni Meet 2024",
+    logoPath: "/images/logos/KOSS.svg",
+    title: "Advisor, KOSS (Kharagpur Open Source Society)",
+    date: "June 2023 - Present",
+    story: "Getting into KOSS was a turning point — it gave me my first real dev community. I discovered Linux, fell in love with scripting and customization, and found myself going deeper into systems, servers, and open source",
     journey: [
-      "Joined SAC, Student body in IIT Kharagpur.Under the Aegis of the Dean, Alumni Affairs.",
-      "Worked in a team of 11 Student Members.",
-      "Organized Annual Alumni Meet 2024, managing corporate and media relations",
-      "Contributed to sponsorship, networking and event management",
+      "Joined KOSS, a core open-source community at IIT Kharagpur.",
+      "Discovered Arch Linux and started customizing my dev workflow.",
+      "Organized KWoC (a student-led version of GSoC).",
+      "Built scripts, learned about bash, database systems, servers.",
 
     ],
   },
@@ -194,26 +145,26 @@ const journeyCards = [
     imgPath: "/images/exp4.png",
     logoPath: "/images/logos/node.png",
     title: "Full Stack Developer",
-    date: "Jan 2025 - Present",
+    date: "June 2024 - Present",
     story: "Frontend started as a way to give my backend projects a face — and quickly became something I often worked on. React unlocked a new kind of creativity, and soon I was building full-stack apps that felt usable, not just functional.",
     journey: [
       "Built my first single-page app during a society interview task.",
-      "Used React, Express, and MongoDB to build tools like a whiteboard app.",
+      "Used React, Express, and Postgres to build tools like a markdown note-taking app.",
       "Started thinking about design, user flow, and how frontend and backend fit together.",
     ],
   },
-  // {
-  //   imgPath: "/images/exp4.png",
-  //   logoPath: "/images/logos/docker.png",
-  //   title: "Newbie at DevOps",
-  //   date: "May 2025 - Present",
-  //   story: "A networking course pulled me into systems thinking — and from there, I fell down the DevOps rabbit hole. Infrastructure as Code, Docker, and scalability changed how I saw code: not just something you write, but something that lives and runs",
-  //   journey: [
-  //     "Built my first IaC setup using Pulumi to automate an EC2 web server.",
-  //     "Dockerized projects for fast deployment and consistent environments.",
-  //     "Started mapping out architecture diagrams and scalability principles for future apps.",
-  //   ],
-  // }
+  {
+    imgPath: "/images/exp4.png",
+    logoPath: "/images/logos/docker.png",
+    title: "Newbie at DevOps",
+    date: "May 2025 - Present",
+    story: "A networking course pulled me into systems thinking — and from there, I fell down the DevOps rabbit hole. Infrastructure as Code, Docker, and scalability changed how I saw code: not just something you write, but something that lives and runs",
+    journey: [
+      "Built my first IaC setup using Pulumi to automate an EC2 web server.",
+      "Dockerized projects for fast deployment and consistent environments.",
+      "Started mapping out architecture diagrams and scalability principles for future apps.",
+    ],
+  }
 
 ];
 
@@ -251,6 +202,51 @@ const socialImgs = [
   },
 ];
 
+const projects = [
+  {
+    title: "Multiplayer Chess Platform",
+    image: "/images/chess.png",
+    techStack: "Node.js, Socket.IO, WebRTC",
+    description:
+      "Built a real-time multiplayer chess platform using Node.js & Socket.IO with <100ms move synchronization. Implemented WebRTC signaling and in-memory session recovery for seamless reconnects.",
+    github: "https://github.com/harshborude/Chess_website",
+  },
+  {
+    title: "Project Management Platform API",
+    image: "/images/projectmanagement.webp",
+    techStack: "Node.js, Express, MongoDB, JWT",
+    description:
+      "Architected a modular RESTful API using Node.js, Express & MongoDB with multi-tier RBAC. Implemented dual-token JWT authentication and optimized queries using aggregation pipelines.",
+    github: "https://github.com/harshborude/Project_management_platform",
+  },
+  {
+    title: "Rubik's Cube Scanner & Solver",
+    image: "/images/rubiks.webp",
+    techStack: "C++, OpenCV, IDA*",
+    description:
+      "Engineered a high-performance C++ Rubiks Cube solver using IDA* search expanding 5M+ nodes/sec. Integrated OpenCV-based real-time cube scanning with >99.5% color accuracy.",
+    github: "https://github.com/harshborude/Rubiks_Cube_Solver",
+  },
+  {
+    title: "URL Shortening Service",
+    image: "/images/urlshortner.png",
+    techStack: "Node.js, PostgreSQL, JWT, Docker",
+    description:
+      "Developed a secure URL shortening platform with Node.js & PostgreSQL. Implemented JWT authentication, NanoID-based short codes, and Dockerized deployment with <10ms redirects.",
+    github: "https://github.com/harshborude/url_shortener",
+  },
+  {
+    title: "Whiteboard App",
+    image: "/images/whiteboard.png",
+    techStack: "Node.js, Express, MongoDB, Joi",
+    description:
+      "Built a secure multi-tenant RESTful search API with advanced filtering, pagination and Joi-based validation. Designed layered architecture separating authorization and business logic.",
+    github: "https://github.com/harshborude/Whiteboard-app",
+  },
+];
+
+
+
 export {
   words,
   abilities,
@@ -259,5 +255,5 @@ export {
   socialImgs,
   techStackImgs,
   navLinks,
-  footerLinks
+  projects,
 };

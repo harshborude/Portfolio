@@ -7,13 +7,16 @@ const TechStack = () => {
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
           title={"Skills and Expertise"}
-          sub={"🤝 The Skills I Bring to the Table"}
+          sub={"The Skills I Bring to the Table"}
         />
 
-        <div className="tech-grid">
+        <div className="tech-grid max-w-7xl mx-auto justify-items-center">
           {techStackImgs.map((stack) => (
-            <div key={stack.name} className="card-border overflow-hidden xl:rounded-6xl rounded-4xl">
-              <div className="tech-icon-wrapper text-center w-full flex flex-col gap-4">
+            <div
+              key={stack.name}
+              className="card-border overflow-hidden xl:rounded-6xl rounded-4xl w-full max-w-sm"
+            >
+              <div className="tech-icon-wrapper text-center w-full flex flex-col gap-4 items-center">
                 <p className="text-white text-xl font-semibold break-words px-6 h-16">
                   {stack.name}
                 </p>
@@ -24,7 +27,9 @@ const TechStack = () => {
                 >
                   {stack.technologies.map((logoPath, i) => (
                     <img
-                      key={i} src={logoPath} alt=""
+                      key={i}
+                      src={logoPath}
+                      alt=""
                       className="aspect-square object-contain bg-white p-1 
                       rounded-2xl w-12 sm:w-14 xl:w-16"
                     />
@@ -35,9 +40,10 @@ const TechStack = () => {
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );
-}
+};
 
 export default TechStack;

@@ -60,13 +60,13 @@ const Hero = () => {
               <h1>
                 into Real Projects
               </h1>
-              <h1>
+              {/* <h1>
                 that Deliver Results
-              </h1>
+              </h1> */}
             </div>
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
-              <strong>Hello, I'm Harsh Borude.</strong> <br />
-              Mining Engg @ IIT Kharagpur → Software Engineer by heart <br />
+              <strong>Hi, I'm Harsh Borude.</strong> <br />
+              Mining Engg @ IIT Kharagpur, Software Engineer by heart <br />
               Driven by curiosity, guided by code. 
             </p>
 

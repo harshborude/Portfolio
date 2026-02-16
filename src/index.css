@@ -155,59 +155,6 @@ section {
       }
     }
   }
-/* Footer base: fixed to bottom and full width */
-.footer {
-  @apply inset-x-0 bottom-0 w-full py-4 px-5 md:px-20 bg-black text-white z-[90] transition-all duration-300 ease-in-out;
-
-  /* If you prefer a slightly translucent background when not scrolled:
-     &.translucent { @apply bg-black/80; } */
-
-  .inner {
-    /* 3 columns layout: left / center / right
-       On small screens stack them vertically */
-    @apply mx-auto grid grid-cols-1 md:grid-cols-3 items-center gap-y-3 md:gap-y-0;
-    max-width: 1200px; /* optional: match your site width */
-  }
-
-  .logo-wrap {
-    @apply col-start-1 text-left;
-    .logo {
-      @apply text-white text-lg md:text-xl font-semibold transition-transform duration-300 hover:scale-105;
-    }
-  }
-
-  .socials-wrap {
-    @apply col-start-1 md:col-start-2 flex justify-center md:justify-center;
-    ul {
-      @apply flex space-x-4;
-      li {
-        @apply list-none;
-        .social-icon {
-          @apply inline-flex items-center justify-center w-9 h-9 rounded-md text-white-50 transition-colors duration-300 hover:text-white hover:bg-white/5;
-          svg {
-            @apply w-5 h-5;
-          }
-        }
-      }
-    }
-  }
-
-  .copyright-wrap {
-    @apply col-start-1 md:col-start-3 flex justify-start md:justify-end text-sm text-white-50;
-    p {
-      @apply m-0;
-    }
-  }
-
-  /* Responsive tuning: on very small screens center everything */
-  @media (max-width: 640px) {
-    .logo-wrap, .copyright-wrap {
-      @apply text-center;
-    }
-  }
-}
-
-
 
   .app-showcase {
     @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center min-h-[95vh];
@@ -326,8 +273,15 @@ section {
   }
 
   .tech-grid {
-    @apply grid 2xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 xl:gap-16 md:gap-10 gap-5 mt-16;
-  }
+  @apply grid 
+  2xl:grid-cols-4 
+  lg:grid-cols-3 
+  md:grid-cols-2 
+  grid-cols-1 
+  xl:gap-16 md:gap-10 gap-5 
+  mt-16;
+}
+
 
   .tech-icon-wrapper {
     @apply flex justify-start items-center w-60 h-80 py-8 relative;
@@ -526,3 +480,81 @@ section {
 .card:hover::before {
   opacity: 1;
 }
+.projects-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.projects-track {
+  display: flex;
+  gap: 24px;
+}
+
+.project-card {
+  min-width: 350px;
+  max-width: 350px;
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.project-card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+
+.project-image {
+  height: 220px;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+   width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.project-info-box {
+  padding: 16px 18px;
+  background: #0f172a; /* slightly different from card */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.project-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+

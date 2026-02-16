@@ -91,8 +91,8 @@ const Experience = () => {
     section-padding xl:px-0">
       <div className="w-full h-full md:px-20 px-5">
         <TitleHeader
-          title="Journey Till Now"
-          sub={"💼 My Life's Overview"}
+          title="My Journey"
+          // sub={" My Life's Overview"}
         />
 
         <div className="mt-32 relative">

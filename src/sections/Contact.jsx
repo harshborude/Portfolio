@@ -1,8 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-
 import toast from "react-hot-toast";
-
 
 import TitleHeader from "../components/TitleHeader";
 import ContactExperience from "../components/contact/ContactExperience";
@@ -18,12 +16,14 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading state
+    if (loading) return;
+
+    setLoading(true);
 
     try {
       await emailjs.sendForm(
@@ -33,29 +33,24 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
-      // Reset form and stop loading
       setForm({ name: "", email: "", message: "" });
-      toast.success("Message sent!")
+      toast.success("Message sent successfully.");
     } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
-      toast.error("Failed to send message!");
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send message. Please try again.");
     } finally {
-      setLoading(false); // Always stop loading, even on error
+      setLoading(false);
     }
   };
-
-  console.log("SERVICE:", import.meta.env.VITE_APP_EMAILJS_SERVICE_ID);
-console.log("TEMPLATE:", import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID);
-console.log("PUBLIC:", import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
-
 
   return (
     <section id="contact" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
-          title="Get in Touch – Let’s Connect"
-          sub="💬 Have questions or ideas? Let’s talk! 🚀"
+          title="Get in Touch"
+          sub="Have a question or would like to collaborate? Feel free to reach out."
         />
+
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
             <div className="flex-center card-border rounded-xl p-10">
@@ -65,14 +60,14 @@ console.log("PUBLIC:", import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
                 className="w-full flex flex-col gap-7"
               >
                 <div>
-                  <label htmlFor="name">Your name</label>
+                  <label htmlFor="name">Your Name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="Name"
+                    placeholder="Enter your name"
                     required
                   />
                 </div>
@@ -85,7 +80,7 @@ console.log("PUBLIC:", import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder=" Email address?"
+                    placeholder="Enter your email address"
                     required
                   />
                 </div>
@@ -97,13 +92,13 @@ console.log("PUBLIC:", import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
                     name="message"
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="How can I help you?"
+                    placeholder="Write your message here"
                     rows="5"
                     required
                   />
                 </div>
 
-                <button type="submit">
+                <button type="submit" disabled={loading}>
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
@@ -117,6 +112,7 @@ console.log("PUBLIC:", import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
               </form>
             </div>
           </div>
+
           <div className="xl:col-span-7 min-h-96">
             <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
               <ContactExperience />

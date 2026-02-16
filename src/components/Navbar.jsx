@@ -6,17 +6,16 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      // so if user has scrolled 10px navbar bg is to be changed
-      const isScrolled = window.scrollY > 10
-      setScrolled(true)
-    }
+  const handleScroll = () => {
+    const isScrolled = window.scrollY > 10
+    setScrolled(isScrolled)
+  }
 
-    window.addEventListener('scroll', handleScroll)
+  window.addEventListener('scroll', handleScroll)
 
-    // cleaning up event listner
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [])
+  return () => window.removeEventListener('scroll', handleScroll)
+}, [])
+
 
   return ( 
     <header className={`navbar ${scrolled ? 'scrolled': 'not-scrolled'}`}>
