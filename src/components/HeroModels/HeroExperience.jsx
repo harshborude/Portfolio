@@ -1,10 +1,16 @@
-// Here we will be rendering our GLB model
-
+import { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useMediaQuery } from "react-responsive";
 import { Room } from "./Room";
 import HeroLights from "./HeroLights";
+
+const Loader = () => (
+  <mesh>
+    <sphereGeometry args={[0.5, 16, 16]} />
+    <meshStandardMaterial color="#d9ecff" wireframe />
+  </mesh>
+);
 
 const HeroExperience = () => {
 
@@ -17,7 +23,6 @@ const HeroExperience = () => {
 
   return (
     <Canvas camera={{ position: [0, 0, 15], fov: 45 }}>
-      {/* Orbit controls allow us to view the mesh in 3d by moving around */}
       <OrbitControls
         enablePan={false}
         enableZoom={!isTablet}
@@ -27,26 +32,17 @@ const HeroExperience = () => {
         maxPolarAngle={Math.PI / 2}
       />
 
-      {/* Testing out meshes
-      <mesh>
-        defining how big it is 
-        <boxGeometry args={[1, 1, 1]} />
-
-        set properties for the mesh material
-        <meshStandardMaterial color={"pink"} />
-      </mesh>
-      */}
-
       <HeroLights />
 
-      <group
-        scale={isMobile ? 0.7 : 1}
-        position={[0, -3.5, 0]}
-        rotation={[0, -Math.PI / 4, 0]}
-      >
-        <Room />
-      </group>
-
+      <Suspense fallback={<Loader />}>
+        <group
+          scale={isMobile ? 0.7 : 1}
+          position={[0, -3.5, 0]}
+          rotation={[0, -Math.PI / 4, 0]}
+        >
+          <Room />
+        </group>
+      </Suspense>
     </Canvas>
   );
 }

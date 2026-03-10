@@ -60,17 +60,14 @@ const Hero = () => {
               <h1>
                 into Real Projects
               </h1>
-              {/* <h1>
-                that Deliver Results
-              </h1> */}
             </div>
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
               <strong>Hi, I'm Harsh Borude.</strong> <br />
               Mining Engg @ IIT Kharagpur, Software Engineer by heart <br />
-              Driven by curiosity, guided by code. 
+              Driven by curiosity, guided by code.
             </p>
 
-            <Button 
+            <Button
               text="See My Work"
               id="button"
               className="md:wd-80 md:h-16 w-60 h-12"
@@ -85,7 +82,7 @@ const Hero = () => {
           </div>
         </figure>
       </div>
-      
+
       <AnimatedCounter />
     </section>
   );

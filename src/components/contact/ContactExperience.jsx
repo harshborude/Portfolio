@@ -1,7 +1,15 @@
+import { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
 import Computer from "./Computer";
+
+const Loader = () => (
+  <mesh>
+    <sphereGeometry args={[0.5, 16, 16]} />
+    <meshStandardMaterial color="#ffd9b3" wireframe />
+  </mesh>
+);
 
 const ContactExperience = () => {
   return (
@@ -34,9 +42,11 @@ const ContactExperience = () => {
         </mesh>
       </group>
 
-      <group scale={0.03} position={[0, -1.49, -2]} castShadow>
-        <Computer />
-      </group>
+      <Suspense fallback={<Loader />}>
+        <group scale={0.03} position={[0, -1.49, -2]} castShadow>
+          <Computer />
+        </group>
+      </Suspense>
     </Canvas>
   );
 };

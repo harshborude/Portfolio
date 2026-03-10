@@ -1,12 +1,10 @@
+const RESUME_LINK = "https://drive.google.com/file/d/1pjeUmDnmbd19CA9L_s6kzm5sQBdfbDe_/view?usp=sharing";
+
 const navLinks = [
   {
     name: "Work",
     link: "#work",
   },
-  // {
-  //   name: "Journey",
-  //   link: "#experience",
-  // },
   {
     name: "Skills",
     link: "#skills",
@@ -31,40 +29,51 @@ const counterItems = [
 
 const abilities = [
   {
-    // imgPath: "/images/build.png",
     title: "Engineering Instinct",
-  desc: "I build systems that are not only functional but thoughtfully designed with modularity and scalability at their core.",
+    desc: "I build systems that are not only functional but thoughtfully designed with modularity and scalability at their core.",
   },
   {
-    // imgPath: "/images/problem.png",
     title: "End-to-End Problem Solving",
     desc: "From infrastructure to APIs, I take full ownership of my projects and ensure each component integrates cleanly and efficiently.",
   },
   {
-    // imgPath: "/images/curiosity.png",
     title: "Projects with a Purpose",
-  desc: "Whether it is a small utility or a full-featured application, I focus on solving real problems and turning everyday friction into practical, well-built tools while continuously expanding my skill set.",
+    desc: "Whether it is a small utility or a full-featured application, I focus on solving real problems and turning everyday friction into practical, well-built tools while continuously expanding my skill set.",
   },
-  // {
-  //   imgPath: "/images/arch.png",
-  //   title: "I Use Arch BTW",
-  //   desc: "As an Arch Linux user, I value control, transparency, and customization. My workflow isn’t just configured—it’s engineered to fit how I think, build, and learn.",
-  // },
 ];
+
+// Maps logo filename to a human-readable tech name for alt text
+const techNameMap = {
+  "react.png": "React",
+  "tailwind.png": "Tailwind CSS",
+  "javascript.png": "JavaScript",
+  "vite.png": "Vite",
+  "node.png": "Node.js",
+  "npm.png": "npm",
+  "express.png": "Express.js",
+  "ejs.png": "EJS",
+  "fastapi.png": "FastAPI",
+  "aws.png": "AWS",
+  "docker.png": "Docker",
+  "sqlite.png": "SQLite",
+  "postgresSQL.png": "PostgreSQL",
+  "git.png": "Git",
+  "github.png": "GitHub",
+  "go.png": "Go",
+  "postman.png": "Postman",
+  "c++.webp": "C++",
+};
 
 const techStackImgs = [
   {
     name: "Frontend Developer",
     technologies: [
       "/images/logos/react.png",
-      // "/images/logos/three.png",
       "/images/logos/tailwind.png",
       "/images/logos/javascript.png",
       "/images/logos/vite.png",
-      // "/images/logos/figma.png"
     ]
   },
-  
   {
     name: "Backend Developer",
     technologies: [
@@ -73,7 +82,6 @@ const techStackImgs = [
       "/images/logos/express.png",
       "/images/logos/ejs.png",
       "/images/logos/fastapi.png",
-      // "/images/logos/flask.png",
     ]
   },
   {
@@ -81,40 +89,23 @@ const techStackImgs = [
     technologies: [
       "/images/logos/aws.png",
       "/images/logos/docker.png",
-      // "/images/logos/pulumi.png",
-      // "/images/logos/vim.png",
       "/images/logos/sqlite.png",
       "/images/logos/postgresSQL.png",
     ]
   },
   {
-    name: "Micellaneous",
+    name: "Miscellaneous",
     technologies: [
       "/images/logos/git.png",
       "/images/logos/github.png",
       "/images/logos/go.png",
-      // "/images/logos/bash.png",
-      // "/images/logos/arch.png",
       "/images/logos/postman.png",
       "/images/logos/c++.webp",
-      
     ]
   },
 ];
 
 const journeyCards = [
-  // {
-  //   imgPath: "/images/exp1.png",
-  //   logoPath: "/images/logos/python.png",
-  //   title: "Python Developer",
-  //   date: "January 2021 - Present",
-  //   story: "My first real project was a school management system in Class 12 using Python and MySQL. I didn’t know much then — but I kept chipping away with help from Stack Overflow and YouTube. That project taught me how addictive building something that works can be.",
-  //   journey: [
-  //     "Built utility tools like an emoji picker, snake games, bots, scrapers etc.",
-  //     "Discovered APIs and web concepts via Python (requests, FAST API etc).",
-  //     "Explored data workflows with Pandas/Numpy, and later AI/LLMs.",
-  //   ],
-  // },
   {
     imgPath: "/images/exp2.png",
     logoPath: "/images/logos/IITKGP.png",
@@ -138,7 +129,6 @@ const journeyCards = [
       "Discovered Arch Linux and started customizing my dev workflow.",
       "Organized KWoC (a student-led version of GSoC).",
       "Built scripts, learned about bash, database systems, servers.",
-
     ],
   },
   {
@@ -165,23 +155,7 @@ const journeyCards = [
       "Started mapping out architecture diagrams and scalability principles for future apps.",
     ],
   }
-
 ];
-
-// const expLogos = [
-//   {
-//     name: "logo1",
-//     imgPath: "/images/logo1.png",
-//   },
-//   {
-//     name: "logo2",
-//     imgPath: "/images/logo2.png",
-//   },
-//   {
-//     name: "logo3",
-//     imgPath: "/images/logo3.png",
-//   },
-// ];
 
 const socialImgs = [
   {
@@ -245,15 +219,15 @@ const projects = [
   },
 ];
 
-
-
 export {
+  RESUME_LINK,
   words,
   abilities,
   counterItems,
   journeyCards,
   socialImgs,
   techStackImgs,
+  techNameMap,
   navLinks,
   projects,
 };

@@ -20,7 +20,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="text-white/70 hover:text-white transition"
           >
-            <img src="/images/linkedin.png" alt="GitHub" className="w-6 h-6 opacity-70 hover:opacity-100" />
+            <img src="/images/linkedin.png" alt="LinkedIn" className="w-6 h-6 opacity-70 hover:opacity-100" />
 
           </a>
 
@@ -30,7 +30,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="text-white/70 hover:text-white transition"
           >
-            <img src="/images/x.png" alt="GitHub" className="w-6 h-6 opacity-70 hover:opacity-100" />
+            <img src="/images/x.png" alt="X (Twitter)" className="w-6 h-6 opacity-70 hover:opacity-100" />
           </a>
         </div>
 
