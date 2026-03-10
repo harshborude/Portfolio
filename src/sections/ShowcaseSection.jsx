@@ -1,68 +1,82 @@
-import { useRef, useState, useCallback } from "react";
+import { useRef, useCallback, useEffect } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { projects } from "../constants/index.js";
 
-const CARD_WIDTH = 370; // card min-width + gap
+const CARD_WIDTH = 364; // 340px card + 24px gap
+const SPEED = 0.8; // pixels per frame (~48px/sec at 60fps)
 const RESUME_DELAY = 3000;
 
 const ShowcaseSection = () => {
   const trackRef = useRef(null);
-  const animationRef = useRef(null);
+  const xRef = useRef(0);
+  const isPausedRef = useRef(false);
   const resumeTimerRef = useRef(null);
-  const [isPaused, setIsPaused] = useState(false);
+  const halfWidthRef = useRef(0);
+  const arrowTweenRef = useRef(null);
 
-  useGSAP(() => {
-    const track = trackRef.current;
-    const totalWidth = track.scrollWidth / 2;
-
-    animationRef.current = gsap.to(track, {
-      x: -totalWidth,
-      duration: 30,
-      ease: "none",
-      repeat: -1,
-    });
+  // Normalize x to stay within [-halfWidth, 0] range for seamless looping
+  const normalizeX = useCallback((val) => {
+    const half = halfWidthRef.current;
+    if (half === 0) return val;
+    // Modulo wrap into [-half, 0]
+    let result = val % half;
+    if (result > 0) result -= half;
+    return result;
   }, []);
 
+  useEffect(() => {
+    const track = trackRef.current;
+    halfWidthRef.current = track.scrollWidth / 2;
+
+    const tick = () => {
+      if (!isPausedRef.current) {
+        xRef.current -= SPEED;
+        xRef.current = normalizeX(xRef.current);
+        gsap.set(track, { x: xRef.current });
+      }
+    };
+
+    gsap.ticker.add(tick);
+    return () => gsap.ticker.remove(tick);
+  }, [normalizeX]);
+
   const pauseCarousel = useCallback(() => {
-    if (animationRef.current) {
-      animationRef.current.pause();
-      setIsPaused(true);
-    }
+    isPausedRef.current = true;
   }, []);
 
   const resumeCarousel = useCallback(() => {
-    if (animationRef.current) {
-      animationRef.current.play();
-      setIsPaused(false);
-    }
+    isPausedRef.current = false;
   }, []);
 
   const scheduleResume = useCallback(() => {
     clearTimeout(resumeTimerRef.current);
-    resumeTimerRef.current = setTimeout(() => {
-      resumeCarousel();
-    }, RESUME_DELAY);
+    resumeTimerRef.current = setTimeout(resumeCarousel, RESUME_DELAY);
   }, [resumeCarousel]);
 
   const handleArrowClick = useCallback(
     (direction) => {
       pauseCarousel();
+      // Kill any in-flight arrow tween
+      if (arrowTweenRef.current) arrowTweenRef.current.kill();
 
-      const track = trackRef.current;
-      const currentX = gsap.getProperty(track, "x");
       const shift = direction === "left" ? CARD_WIDTH : -CARD_WIDTH;
+      const targetX = normalizeX(xRef.current + shift);
 
-      gsap.to(track, {
-        x: currentX + shift,
-        duration: 0.5,
+      arrowTweenRef.current = gsap.to(trackRef.current, {
+        x: targetX,
+        duration: 0.45,
         ease: "power2.out",
-        onComplete: () => {
+        onUpdate() {
+          xRef.current = gsap.getProperty(trackRef.current, "x");
+        },
+        onComplete() {
+          xRef.current = targetX;
+          arrowTweenRef.current = null;
           scheduleResume();
         },
       });
     },
-    [pauseCarousel, scheduleResume]
+    [pauseCarousel, scheduleResume, normalizeX]
   );
 
   const handleMouseEnter = useCallback(() => {
