@@ -217,6 +217,13 @@ const projects = [
       "Built a secure multi-tenant RESTful search API with advanced filtering, pagination and Joi-based validation. Designed layered architecture separating authorization and business logic.",
     github: "https://github.com/harshborude/Whiteboard-app",
   },
+  {
+    title: "Real-time Auction Platform",
+    image: "/images/auction.png",
+    techStack: "Go, Gin, PostgreSQL, GORM, Gorilla WebSocket, JWT, Docker",
+    description: "A real-time auction platform with credit-based bidding, WebSocket-powered live updates, and automated auction lifecycle management using background workers.",
+    github: "https://github.com/harshborude/Auction_Backend",
+  }
 ];
 
 export {
