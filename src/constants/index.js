@@ -219,7 +219,7 @@ const projects = [
   },
   {
     title: "Real-time Auction Platform",
-    image: "/images/auction.png",
+    image: "/images/auction.webp",
     techStack: "Go, Gin, PostgreSQL, GORM, Gorilla WebSocket, JWT, Docker",
     description: "A real-time auction platform with credit-based bidding, WebSocket-powered live updates, and automated auction lifecycle management using background workers.",
     github: "https://github.com/harshborude/Auction_Backend",
