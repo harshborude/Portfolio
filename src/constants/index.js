@@ -236,6 +236,13 @@ const projects = [
     techStack: "Go, Gin, PostgreSQL, GORM, Gorilla WebSocket, JWT, Docker",
     description: "A real-time auction platform with credit-based bidding, WebSocket-powered live updates, and automated auction lifecycle management using background workers.",
     github: "https://github.com/harshborude/Auction_Backend",
+  },
+  {
+    title: "KaiMhantOS",
+    image: "/images/arch.png",
+    techStack: "C, x86 Assembly (NASM)",
+    description: "A 32-bit protected mode Operating System built from scratch with a custom VGA driver, real-time PS/2 keyboard support, and an interactive command shell.",
+    github: "https://github.com/harshborude/KaiMhantOS",
   }
 ];
 
