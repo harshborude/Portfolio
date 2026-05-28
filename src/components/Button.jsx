@@ -1,6 +1,7 @@
 const Button = ({ text, className, id }) => {
   return (
-    <a
+    <button
+      type="button"
       onClick={(e) => {
         e.preventDefault(); // preventing the default reloading action of the a tag
 
@@ -29,7 +30,7 @@ const Button = ({ text, className, id }) => {
           <img src="/images/arrow-down.svg" alt="arrow" />
         </div>
       </div>
-    </a>
+    </button>
   );
 }
 

@@ -62,7 +62,8 @@ const Navbar = () => {
 
         {/* Mobile hamburger button */}
         <button
-          className="lg:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 z-[200] relative"
+          type="button"
+          className="lg:hidden flex flex-col justify-center items-center size-10 gap-1.5 z-[200] relative"
           onClick={() => setMobileOpen((prev) => !prev)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
@@ -75,8 +76,14 @@ const Navbar = () => {
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
+          role="button"
+          tabIndex={0}
           className="fixed inset-0 bg-black/60 z-[150] lg:hidden"
           onClick={() => setMobileOpen(false)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') setMobileOpen(false);
+          }}
+          aria-label="Close menu"
         />
       )}
 

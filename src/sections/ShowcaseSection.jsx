@@ -98,6 +98,7 @@ const ShowcaseSection = () => {
         <div className="showcase-container">
           {/* Left Arrow */}
           <button
+            type="button"
             className="showcase-arrow showcase-arrow--left"
             onClick={() => handleArrowClick("left")}
             aria-label="Previous project"
@@ -109,6 +110,7 @@ const ShowcaseSection = () => {
 
           {/* Right Arrow */}
           <button
+            type="button"
             className="showcase-arrow showcase-arrow--right"
             onClick={() => handleArrowClick("right")}
             aria-label="Next project"
@@ -127,7 +129,7 @@ const ShowcaseSection = () => {
             <div className="projects-track" ref={trackRef}>
               {[...projects, ...projects].map((project, index) => (
                 <a
-                  key={index}
+                  key={`${project.title}-${index}`}
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"

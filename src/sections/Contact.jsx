@@ -14,7 +14,7 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
@@ -66,7 +66,7 @@ const Contact = () => {
                     id="name"
                     name="name"
                     value={form.name}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     placeholder="Enter your name"
                     required
                   />
@@ -79,7 +79,7 @@ const Contact = () => {
                     id="email"
                     name="email"
                     value={form.email}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     placeholder="Enter your email address"
                     required
                   />
@@ -91,14 +91,14 @@ const Contact = () => {
                     id="message"
                     name="message"
                     value={form.message}
-                    onChange={handleChange}
+                    onChange={handleInputChange}
                     placeholder="Write your message here"
                     rows="5"
                     required
                   />
                 </div>
 
-                <button type="submit" disabled={loading}>
+                <button type="submit" disabled={loading} aria-label="Send Message">
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">

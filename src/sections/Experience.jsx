@@ -130,7 +130,7 @@ const Experience = () => {
                         <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
                           {card.journey.map(
                             (journey, index) => (
-                              <li key={index} className="text-lg">
+                              <li key={`${index}-${journey.slice(0, 10)}`} className="text-lg">
                                 {journey}
                               </li>
                             )
