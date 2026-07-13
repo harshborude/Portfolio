@@ -29,6 +29,8 @@ const Experience = () => {
           trigger: card,
           // Trigger the animation when the card is 80% down the screen
           start: "top 80%",
+          // Play the animation when scrolling down, and reverse it when scrolling up
+          toggleActions: "play none none reverse",
         },
       });
     });
@@ -81,6 +83,8 @@ const Experience = () => {
           trigger: text,
           // Trigger the animation when the text is 60% down the screen
           start: "top 75%",
+          // Play the animation when scrolling down, and reverse it when scrolling up
+          toggleActions: "play none none reverse",
         },
       });
     }, "<"); // position parameter - insert at the start of the animation

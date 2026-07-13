@@ -1,4 +1,4 @@
-const RESUME_LINK = "https://drive.google.com/file/d/1pjeUmDnmbd19CA9L_s6kzm5sQBdfbDe_/view?usp=sharing";
+const RESUME_LINK = "https://drive.google.com/file/d/1p3AaGatp9Lq-DadwT9H9Qzrg3EmzFj_e/view?usp=sharing";
 
 const navLinks = [
   {
@@ -147,13 +147,13 @@ const journeyCards = [
   {
     imgPath: "/images/exp4.png",
     logoPath: "/images/logos/javascript.png",
-    title: "Software Developer Intern",
+    title: "Software Development Engineer | Mediosim Pvt. Ltd.",
     date: "May 2026 - Present",
-    story: "Currently working on medical simulation development projects related to our medical and science education simulation platforms.",
+    story: "Currently building a scalable and secure Unity-based simulation platform using C#, focusing on performance and robust software architecture.",
     journey: [
-      "Developing features for medical and science education simulation platforms.",
-      "Collaborating on interactive educational tools for science and medicine.",
-      "Enhancing the core simulation platform for better user experience.",
+      "Developing scalable Unity applications using C#, ensuring a modular and easy-to-maintain codebase.",
+      "Built a secure, hardware-locked licensing system to completely prevent unauthorized application sharing.",
+      "Optimized application performance by implementing efficient background data tracking, ensuring a smooth and stable user experience.",
     ],
   },
   {
@@ -190,6 +190,14 @@ const socialImgs = [
 ];
 
 const projects = [
+  {
+    title: "DB_Visualizer",
+    image: "/images/db_visualizer.png",
+    techStack: "React, TypeScript, Vite, React Flow, Dagre",
+    description:
+      "A web-based tool that parses SQL dumps and automatically generates interactive Entity-Relationship Diagrams (ERDs) using React Flow and Dagre for layout.",
+    github: "https://github.com/harshborude/DB_Visualizer",
+  },
   {
     title: "Multiplayer Chess Platform",
     image: "/images/chess.png",
